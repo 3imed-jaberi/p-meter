@@ -1,0 +1,36 @@
+{
+  "name": "p-meter",
+  "version": "1.0.0",
+  "description": "The purpose of this module is to analyze the password and then categorize it according to our rules mentioned in the documentation where you can view the result numerical or textual.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "^5.2.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/3imed-jaberi/p-meter.git"
+  },
+  "keywords": [
+    "password",
+    "meter",
+    "powerful",
+    "measure",
+    "mot-de-pass",
+    "check-password-power",
+    "strength"
+  ],
+  "author": "imed jaberi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/3imed-jaberi/p-meter/issues"
+  },
+  "homepage": "https://github.com/3imed-jaberi/p-meter#readme"
+}
