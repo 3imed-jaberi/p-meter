@@ -1,6 +1,6 @@
 # P-METER - a measure of the strength of the password for node js developer ..
 ---
-![imed-jaberi](https://scontent.ftun12-1.fna.fbcdn.net/v/t1.15752-9/51102505_2146593975378362_2929094028592939008_n.png?_nc_cat=111&_nc_ht=scontent.ftun12-1.fna&oh=783651e9c09c9bc35c9d3f8ff9361aa4&oe=5CB77F0F "imed jaberi") 
+![imed-jaberi](/lib/images/logo.png) 
 ##### The purpose of this module is to analyze the password and then categorize it according to our rules mentioned in the documentation where you can view the result numerical or textual.
 ###### **`NOTE:`** we verify that a blank password or that there are spaces are passed to the module function .
 
@@ -11,6 +11,7 @@
 ```bash
 $ npm install p-meter
 ```
+![imed-jaberi](/lib/images/installation-package.gif) 
 
 ## Usage 
 ---
