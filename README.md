@@ -11,7 +11,9 @@
 ```bash
 $ npm install p-meter
 ```
-![imed-jaberi](/lib/images/installation-package.gif) 
+
+
+![imed-jaberi](/lib/images/installation-package1.gif) 
 
 ## Usage 
 ---
@@ -34,7 +36,7 @@ $your_pc_name_with_your_directory
 *************
 ```
 
-![imed-jaberi](/lib/images/usage-package.gif) 
+![imed-jaberi](/lib/images/usage-package1.gif) 
 
 ###### **`NOTE:`** This example is the simplest thing to write ... for more examples you will find them in a section of exemples  .. 
 
@@ -46,13 +48,13 @@ The result can be displayed in a two different way ( Numerical or Textual ) .. I
 | -1 | 0 | 1 | 2 | 3 | 4 | 5 | 6 |
 |----|---|---|---|---|---|---|---|
 
-![imed-jaberi](/lib/images/number-result-example.gif) 
+![imed-jaberi](/lib/images/number-result-example1.gif) 
 
 2 - Textual :
 | ERROR | FAIBLE | AVG | ABOVE AVG | STRONG AVG | FORT | ABOVE FORT | STRONG FORT |
 |-------|--------|-----|-----------|------------|------|------------|-------------|
 
-![imed-jaberi](/lib/images/string-result-with-space-example.gif) 
+![imed-jaberi](/lib/images/string-result-with-space-example1.gif) 
 
 
 ## Rules : 
