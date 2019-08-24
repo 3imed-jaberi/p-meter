@@ -1,6 +1,6 @@
 {
   "name": "p-meter",
-  "version": "1.0.1",
+  "version": "1.2.0",
   "description": "The purpose of this module is to analyze the password and then categorize it according to our rules mentioned in the documentation where you can view the result numerical or textual.",
   "main": "index.js",
   "directories": {
@@ -9,10 +9,17 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "mocha": "^5.2.0"
+    "mocha": "^5.2.0",
+    "coveralls": "^3.0.6",
+    "istanbul": "^0.4.5"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "cover": "istanbul cover node_modules/mocha/bin/_mocha test/*.js - - -R spec",
+    "ci": "npm run cover",
+    "postversion": "git push && git push --tags",
+    "prepublishOnly": "npm run ci",
+    "preversion": "npm run ci"
   },
   "repository": {
     "type": "git",

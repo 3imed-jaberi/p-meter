@@ -1,7 +1,15 @@
 # P-METER - a measure of the strength of the password for node js developer ..
 ---
 ![imed-jaberi](/demo/logo.png) 
+
+<!-- bagdes -->
+
+[![Build Status](https://travis-ci.org/3imed-jaberi/p-meter.svg?branch=master)](https://travis-ci.org/3imed-jaberi/p-meter)
+
+[![Coverage Status](https://coveralls.io/repos/github/3imed-jaberi/p-meter/badge.svg?branch=master)](https://coveralls.io/github/3imed-jaberi/p-meter?branch=master)
+
 ##### The purpose of this module is to analyze the password and then categorize it according to our rules mentioned in the documentation where you can view the result numerical or textual.
+
 ###### **`NOTE:`** we verify that a blank password or that there are spaces are passed to the module function .
 
 ## Installation 
