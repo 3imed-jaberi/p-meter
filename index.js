@@ -1,3 +1,4 @@
+
 const passwordMeter = require('./src/main');
 
-module.exports = passwordMeter ;
+module.exports = passwordMeter;
