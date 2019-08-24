@@ -5,7 +5,7 @@ const errorType = require('./type-of-error');
 
 const main = (password ,  { displayString , useSpace } ) => {
       // number of characters in the password ...
-      TailleAnalysis = password.length ;
+      TailleAnalysis = password.length;
       // espaceSearch and result according to the developer choice ...
       (useSpace) ? espaceChartAnalysis = null : espaceChartAnalysis = password.match(espaceChart) ;
       // set the resul in array ...
@@ -19,9 +19,9 @@ const main = (password ,  { displayString , useSpace } ) => {
             return ( display(result) + errorType(nullResultSearch , espaceChartAnalysis , TailleAnalysis) ) ;
       }
       else {
-            return result ;    
+            return result;    
       }
    
 }
 
-module.exports = main ;
+module.exports = main;

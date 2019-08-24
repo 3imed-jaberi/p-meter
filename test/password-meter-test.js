@@ -1,6 +1,7 @@
 const assert = require('assert');
 const package = require('../index') ; 
 
+
 describe('password meter test - error' , () => {
 
      it ('Condition 1', () => {

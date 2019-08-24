@@ -1,4 +1,3 @@
-
 const lowerCaseLetters = /[a-z]/g;
 const upperCaseLetters = /[A-Z]/g;
 const number = /[0-9]/g ;
@@ -15,4 +14,4 @@ const searchResult = (password) => {
 };
 
 
-module.exports = { searchResult , espaceChart }  ;
+module.exports = { searchResult , espaceChart };
