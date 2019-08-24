@@ -12,6 +12,7 @@
 
 ###### **`NOTE:`** we verify that a blank password or that there are spaces are passed to the module function .
 
+
 ## Installation 
 ---
 
@@ -23,20 +24,27 @@ $ npm install p-meter
 
 ![imed-jaberi](/demo/installation-package.gif) 
 
+
 ## Usage 
 ---
  The method of use is simple and very easy ... Just follow these steps :
-Step 1 : Import the module in this way .
+
+Step 1 : Import the module in this way.
+
 ```javascript
 const passwordMeter  = require ('p-meter') ;
 ```
-Step 2 : Enter the password to the function with the method of view you want .
+
+Step 2 : Enter the password to the function with the method of view you want.
+
 ```javascript
 let password  = "199812+imeD";
 let result = passwordMeter (password , { displayString : true , useSpace : false });
 console.log(`*************\n ${result} \n*************`);
 ```
+
 Step 3 : Execute method to see the result ..
+
 ```bash
 $your_pc_name_with_your_directory
 *************
@@ -52,13 +60,16 @@ $your_pc_name_with_your_directory
 ## Examples
 ----
 The result can be displayed in a two different way ( Numerical or Textual ) .. In this section we illustrate the two ways of seeing the result .. 
+
 1 - Numerical : 
+
 | -1 | 0 | 1 | 2 | 3 | 4 | 5 | 6 |
 |----|---|---|---|---|---|---|---|
 
 ![imed-jaberi](/demo/number-result-example.gif) 
 
 2 - Textual :
+
 | ERROR | FAIBLE | AVG | ABOVE AVG | STRONG AVG | FORT | ABOVE FORT | STRONG FORT |
 |-------|--------|-----|-----------|------------|------|------------|-------------|
 
@@ -68,7 +79,9 @@ The result can be displayed in a two different way ( Numerical or Textual ) .. I
 ## Rules : 
 ---
 We can divide passwords into four categories (numbers, uppercase alphabet, lowercase alphabet and special characters) ..
+
 We have 8 levels of results:
+
 - Level 1 (-1 or ERROR): If you have an invalid password that is empty or composed of spaces.
 - Level 2 (0 or LOW): If there is only one category in the password of the four.
 - Level 3 (1 or AVG): if there are two categories in the password and the special characters do not belong to them.
@@ -80,7 +93,8 @@ We have 8 levels of results:
     - If uppercase letters are at least 30% of the password length, lowercase letters must be at least 10%.
     - If lowercase letters represent 30% of the length of the password, the capital letters must represent at least 10%.
     - Special characters must be at least 20%.
+
+
 #### License
 ---
 [MIT](https://choosealicense.com/licenses/mit/) 
-
