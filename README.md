@@ -21,6 +21,10 @@
 $ npm install p-meter
 ```
 
+- YARN :
+```bash
+$ yarn add p-meter
+```
 
 ## Usage 
 ---
