@@ -75,6 +75,7 @@ console.log
 
 `);
 
+
 describe('password meter test - faible' , () => {
 
      it ('Condition 1', () => {
@@ -128,6 +129,7 @@ describe('password meter test - faible' , () => {
      });
 });
 
+
 describe('password meter test - AVG' , () => {
 
      it ('Condition 1', () => {
@@ -160,6 +162,7 @@ describe('password meter test - AVG' , () => {
           assert.equal(result,'AVG');
      });
 });
+
 
 describe('password meter test - ABOVE AVG' , () => {
 
@@ -242,6 +245,7 @@ describe('password meter test - FORT' , () => {
      });
 });
 
+
 describe('password meter test - ABOVE FORT' , () => {
 
      it ('Condition 1', () => {
@@ -254,6 +258,7 @@ describe('password meter test - ABOVE FORT' , () => {
           assert.equal(result,'ABOVE FORT');
      });
 });
+
 
 describe('password meter test - STRONG FORT' , () => {
 
