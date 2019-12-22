@@ -1,4 +1,2 @@
-
-const passwordMeter = require('./src/main');
-
-module.exports = passwordMeter;
+/* root package 🤿 */
+module.exports = require('./src/main');
