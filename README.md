@@ -1,14 +1,12 @@
 # P-METER - a measure of the strength of the password for node js developer ..
 ---
+
 ![imed-jaberi](logo.png) 
 
-<!-- bagdes -->
 
-[![Build Status](https://travis-ci.org/3imed-jaberi/p-meter.svg?branch=master)](https://travis-ci.org/3imed-jaberi/p-meter)
+[![Build Status](https://travis-ci.org/3imed-jaberi/p-meter.svg?branch=master)](https://travis-ci.org/3imed-jaberi/p-meter) &nbsp; [![Coverage Status](https://coveralls.io/repos/github/3imed-jaberi/p-meter/badge.svg?branch=master)](https://coveralls.io/github/3imed-jaberi/p-meter?branch=master)
 
-[![Coverage Status](https://coveralls.io/repos/github/3imed-jaberi/p-meter/badge.svg?branch=master)](https://coveralls.io/github/3imed-jaberi/p-meter?branch=master)
-
-##### The purpose of this module is to analyze the password and then categorize it according to our rules mentioned in the documentation where you can view the result numerical or textual.
+### The purpose of this module is to analyze the password and then categorize it according to our rules mentioned in the documentation where you can view the result numerical or textual.
 
 ###### **`NOTE:`** we verify that a blank password or that there are spaces are passed to the module function .
 
@@ -25,6 +23,7 @@ $ npm install p-meter
 ```bash
 $ yarn add p-meter
 ```
+
 
 ## Usage 
 ---
@@ -60,6 +59,7 @@ $your_pc_name_with_your_directory
 ----
 The result can be displayed in a two different way ( Numerical or Textual ) .. In this section we illustrate the two ways of seeing the result .. 
 
+
 1 - Numerical : 
 
 | -1 | 0 | 1 | 2 | 3 | 4 | 5 | 6 |
@@ -70,17 +70,20 @@ The result can be displayed in a two different way ( Numerical or Textual ) .. I
 let result = passwordMeter (password , { displayString : /*>>*/ false /*<<*/ , useSpace : false });
 ```
 
+
 2 - Textual :
 
 | ERROR | FAIBLE | AVG | ABOVE AVG | STRONG AVG | FORT | ABOVE FORT | STRONG FORT |
 |-------|--------|-----|-----------|------------|------|------------|-------------|
+
 
 ```javascript
 let result = passwordMeter (password , { displayString : /*>>*/ true /*<<*/ , useSpace : false });
 ```
 
 
-## Rules : 
+
+## Rules 
 ---
 We can divide passwords into four categories (numbers, uppercase alphabet, lowercase alphabet and special characters) ..
 
@@ -99,6 +102,7 @@ We have 8 levels of results:
     - Special characters must be at least 20%.
 
 
+
 #### License
 ---
-[MIT](https://choosealicense.com/licenses/mit/) 
+[MIT](https://choosealicense.com/licenses/mit/)
