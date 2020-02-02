@@ -1,5 +1,10 @@
-const { errorType, display, searchResult, espaceChart, validationRules } = require('./utils');
-
+const { 
+  errorType, 
+  display, 
+  searchResult, 
+  espaceChart, 
+  validationRules 
+} = require('./utils');
 
 
 const main = (password,  { displayString, useSpace } ) => {
