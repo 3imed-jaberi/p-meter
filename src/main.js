@@ -1,5 +1,4 @@
-const validationRules = require('./validation-rules');
-const { errorType, display, searchResult, espaceChart } = require('./utils');
+const { errorType, display, searchResult, espaceChart, validationRules } = require('./utils');
 
 
 
