@@ -1,6 +1,6 @@
 {
   "name": "p-meter",
-  "version": "1.4.0",
+  "version": "2.0.0",
   "description": "A measure of the strength of the password for node js developer 📏 ..",
   "main": "index.js",
   "scripts": {
@@ -26,7 +26,8 @@
   ],
   "author": {
     "name": "imed jaberi",
-    "email": "3imed.jaberi@gmail.com"
+    "email": "3imed.jaberi@gmail.com",
+    "url": "https://github.com/3imed-jaberi"
   },
   "license": "MIT",
   "devDependencies": {
