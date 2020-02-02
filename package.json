@@ -1,11 +1,11 @@
 {
   "name": "p-meter",
   "version": "1.4.0",
-  "description": " The purpose of this module is to analyze the password and then categorize it according to our rules mentioned in the documentation where you can view the result numerical or textual. 📏 ",
+  "description": "A measure of the strength of the password for node js developer 📏 ..",
   "main": "index.js",
   "scripts": {
     "test": "mocha",
-    "cover": "istanbul cover node_modules/mocha/bin/_mocha test/*.js - - -R spec",
+    "cover": "istanbul cover node_modules/mocha/bin/_mocha test/*.js",
     "ci": "npm run cover",
     "postversion": "git push && git push --tags",
     "prepublishOnly": "npm run ci",
@@ -29,18 +29,15 @@
     "email": "3imed.jaberi@gmail.com"
   },
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/3imed-jaberi/p-meter/issues"
-  },
-  "homepage": "https://github.com/3imed-jaberi/p-meter#readme",
   "devDependencies": {
     "mocha": "^5.2.0",
-    "coveralls": "^3.0.6",
     "istanbul": "^0.4.5"
   },
   "engines": {
-    "node": ">= 10.12.0",
-    "npm": ">= 6.9.0",
-    "yarn": ">= 1.16.0"
-  }
+    "node": ">= 8"
+  },
+  "bugs": {
+    "url": "https://github.com/3imed-jaberi/p-meter/issues"
+  },
+  "homepage": "https://github.com/3imed-jaberi/p-meter#readme"
 }
