@@ -1,5 +1,7 @@
 // type of error file ..  
-const errorType = (nullResultSearch , espaceChartAnalysis , TailleAnalysis ) => {
+const errorType = (displayOpts) => {
+  let { nullResultSearch, espaceChartAnalysis, TailleAnalysis } = displayOpts;
+
   if (nullResultSearch.length === 4) {
     return ' : empty password';
   }else if (espaceChartAnalysis !== null) {
@@ -15,7 +17,11 @@ const errorType = (nullResultSearch , espaceChartAnalysis , TailleAnalysis ) => 
 // show result ..
 const { StringOpt, IntOpt } = require('./outputOpts.json');
 
-const display = (result) => (StringOpt [IntOpt.findIndex(value => { return value == result })]);
+const display = (displayOpts) => {
+  let intResult = validationRules(displayOpts);
+  let stringResult = StringOpt[IntOpt.findIndex(value => value === intResult)];
+  return displayOpts.displayString ? `${stringResult}${errorType(displayOpts)}` : intResult;
+}
 
 
 // analyse-password.js 
@@ -36,33 +42,34 @@ const searchResult = (password) => ([
 ]);
 
 
-// rules-of-analyse.js
-const rules = (TailleAnalysis ) => { 
-  
-  return (
-    (TailleAnalysis > 9) 
-      ? 
-    { 
-      firstRule : parseInt(TailleAnalysis * 0.3), 
-      secondRule : parseInt(TailleAnalysis * 0.1),
-      thirdRule : parseInt(TailleAnalysis * 0.1) 
-    }
-    :
-    { 
-      firstRule : parseInt(TailleAnalysis * 0.3), 
-      secondRule : parseInt(TailleAnalysis * 0.2),
-      thirdRule : parseInt(TailleAnalysis * 0.2)
-    }
-  );
+// get the rules collection ..
+const getRules = (TailleAnalysis ) => { 
+
+  const getRulesForShortPassword = () => ({
+    firstRule : parseInt(TailleAnalysis * 0.3), 
+    secondRule : parseInt(TailleAnalysis * 0.1),
+    thirdRule : parseInt(TailleAnalysis * 0.1) 
+  });
+
+  const getRulesForLongPassword = () => ({
+    firstRule : parseInt(TailleAnalysis * 0.3), 
+    secondRule : parseInt(TailleAnalysis * 0.2),
+    thirdRule : parseInt(TailleAnalysis * 0.2)
+  });
+
+  return TailleAnalysis > 9 ? getRulesForShortPassword() : getRulesForLongPassword();
 };
 
 
 // validation-rules.js
-const validationRules = (nullResultSearch, espaceChartAnalysis, TailleAnalysis) => {
+const validationRules = (displayOpts) => {
+
+  let { nullResultSearch, espaceChartAnalysis, TailleAnalysis } = displayOpts;
+
   if ((nullResultSearch.length === 4) || (espaceChartAnalysis !== null) || (TailleAnalysis > 24) || (TailleAnalysis < 8)){
     return -1;
   }else if (nullResultSearch.length === 0) {
-    let myRules = rules(TailleAnalysis);
+    let myRules = getRules(TailleAnalysis);
     // Fort mais Trés fort ou non ! 
     if (lowerCaseAnalysis.length >= myRules.firstRule) {
       if (upperCaseAnalysis.length >=  myRules.secondRule) {
@@ -92,4 +99,4 @@ const validationRules = (nullResultSearch, espaceChartAnalysis, TailleAnalysis) 
 
 
 
-module.exports = { errorType, display, searchResult, espaceChart, rules, validationRules }
+module.exports = { errorType, display, searchResult, espaceChart, getRules, validationRules }

@@ -21,10 +21,10 @@ const main = (password, Opts) => {
   // searche all null(s) results .. 
   nullResultSearch = MyAnalysisResult.filter(unit => unit === null);
   //  result of rules validations ... 
-  result = validationRules(nullResultSearch, espaceChartAnalysis, TailleAnalysis);
+  result = display({ displayString, nullResultSearch, espaceChartAnalysis, TailleAnalysis });
 
 
-  return (displayString ? `${display(result)}${errorType(nullResultSearch, espaceChartAnalysis, TailleAnalysis)}` : result);
+  return result;
 }
 
 
