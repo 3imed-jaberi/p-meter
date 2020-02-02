@@ -1,19 +1,16 @@
-# P-METER - a measure of the strength of the password for node js developer ..
+# P-METER 📏 - a measure of the strength of the password for node js developer ..
 ---
-
-![imed-jaberi](logo.png) 
-
 
 [![Build Status](https://travis-ci.org/3imed-jaberi/p-meter.svg?branch=master)](https://travis-ci.org/3imed-jaberi/p-meter) &nbsp; [![Coverage Status](https://coveralls.io/repos/github/3imed-jaberi/p-meter/badge.svg?branch=master)](https://coveralls.io/github/3imed-jaberi/p-meter?branch=master)
 
+
 ### The purpose of this module is to analyze the password and then categorize it according to our rules mentioned in the documentation where you can view the result numerical or textual.
 
-###### **`NOTE:`** we verify that a blank password or that there are spaces are passed to the module function .
+###### **`NOTE:`** we verify that a blank password or that there are spaces are passed to the module function.
 
 
 ## Installation 
 ---
-
 - NPM :
 ```bash
 $ npm install p-meter
@@ -32,14 +29,19 @@ $ yarn add p-meter
 Step 1 : Import the module in this way.
 
 ```javascript
-const passwordMeter  = require ('p-meter') ;
+const passwordMeter = require ('p-meter') ;
 ```
 
 Step 2 : Enter the password to the function with the method of view you want.
 
 ```javascript
-let password  = "199812+imeD";
-let result = passwordMeter (password , { displayString : true , useSpace : false });
+let password = '199812+imeD';
+// 1.x.x
+// let result = passwordMeter (password, { displayString: true, useSpace: false });
+// 2.x.x
+// the default value of displayString and useSpace is false .. 
+let result = passwordMeter (password, { displayString: true });
+
 console.log(`*************\n ${result} \n*************`);
 ```
 
@@ -67,9 +69,12 @@ The result can be displayed in a two different way ( Numerical or Textual ) .. I
 
 
 ```javascript
-let result = passwordMeter (password , { displayString : /*>>*/ false /*<<*/ , useSpace : false });
+// 1.x.x 
+let result = passwordMeter (password, { displayString: /*>>*/ false /*<<*/, useSpace: false });
+// 2.x.x
+// the default value of displayString and useSpace is false .. 
+let result = passwordMeter (password);
 ```
-
 
 2 - Textual :
 
@@ -78,9 +83,12 @@ let result = passwordMeter (password , { displayString : /*>>*/ false /*<<*/ , u
 
 
 ```javascript
-let result = passwordMeter (password , { displayString : /*>>*/ true /*<<*/ , useSpace : false });
+// 1.x.x
+let result = passwordMeter (password, { displayString: /*>>*/ true /*<<*/, useSpace: false });
+// 2.x.x
+// the default value of displayString and useSpace is false .. 
+let result = passwordMeter (password, { displayString: true });
 ```
-
 
 
 ## Rules 
@@ -102,7 +110,6 @@ We have 8 levels of results:
     - Special characters must be at least 20%.
 
 
-
 #### License
 ---
-[MIT](https://choosealicense.com/licenses/mit/)
+[MIT](LICENSE)
