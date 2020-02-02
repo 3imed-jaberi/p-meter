@@ -7,7 +7,10 @@ const {
 } = require('./utils');
 
 
-const main = (password,  { displayString, useSpace } ) => {
+const main = (password, Opts) => {
+
+  let displayString = Opts.displayString || false, 
+  useSpace = Opts.useSpace || false;
 
   // number of characters in the password ...
   TailleAnalysis = password.length;
