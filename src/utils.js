@@ -11,5 +11,12 @@ const errorType = (nullResultSearch , espaceChartAnalysis , TailleAnalysis ) => 
   };
 }
 
+// show result ..
+const resultStringValue = ['ERROR', 'FAIBLE', 'AVG', 'ABOVE AVG', 'STRONG AVG', 'FORT', 'ABOVE FORT','STRONG FORT'];
+const resultIntgerValue = [-1, 0, 1, 2, 3, 4, 5, 6]; 
 
-module.exports = { errorType }
+
+const display = (result) => (resultStringValue [resultIntgerValue.findIndex(value => { return value == result })]);
+
+
+module.exports = { errorType, display }
