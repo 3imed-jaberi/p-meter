@@ -1,4 +1,4 @@
-const rules = require('./rules-of-analyse');
+const { rules } = require('./utils');
 
 
 
