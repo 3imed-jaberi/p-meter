@@ -1,27 +1,8 @@
-// type of error file ..  
-const errorType = (displayOpts) => {
-  let { nullResultSearch, espaceChartAnalysis, TailleAnalysis } = displayOpts;
-
-  if (nullResultSearch.length === 4) {
-    return ' : empty password';
-  }else if (espaceChartAnalysis !== null) {
-    return ' : useSpace is not active';
-  }else if ((8 > TailleAnalysis) || (TailleAnalysis > 24)) {
-    return ' : validate the length of password';
-  }else {
-    return ''; 
-  };
-}
-
 
 // show result ..
 const { StringOpt, IntOpt } = require('./outputOpts.json');
 
-const display = (displayOpts) => {
-  let intResult = validationRules(displayOpts);
-  let stringResult = StringOpt[IntOpt.findIndex(value => value === intResult)];
-  return displayOpts.displayString ? `${stringResult}${errorType(displayOpts)}` : intResult;
-}
+
 
 
 // analyse-password.js 
@@ -33,7 +14,7 @@ const {
   espaceChart
 } = require('./constant');
 
-// __ Private Use __ //
+// ___ Private Use ___ //
 const searchResult = (password) => ([
   lowerCaseAnalysis = password.match(lowerCaseLetters),
   upperCaseAnalysis = password.match(upperCaseLetters),
@@ -61,42 +42,55 @@ const getRules = (TailleAnalysis ) => {
 };
 
 
-// validation-rules.js
-const validationRules = (displayOpts) => {
+// check the rules .. 
+const checkRules = (displayOpts) => {
 
   let { nullResultSearch, espaceChartAnalysis, TailleAnalysis } = displayOpts;
 
-  if ((nullResultSearch.length === 4) || (espaceChartAnalysis !== null) || (TailleAnalysis > 24) || (TailleAnalysis < 8)){
+  // 8 --> 24 support .. || espaceChartAnalysis: just for fix useSpace .. 
+  if(TailleAnalysis > 24 || TailleAnalysis < 8 || espaceChartAnalysis !== null){
     return -1;
-  }else if (nullResultSearch.length === 0) {
-    let myRules = getRules(TailleAnalysis);
-    // Fort mais Trés fort ou non ! 
-    if (lowerCaseAnalysis.length >= myRules.firstRule) {
-      if (upperCaseAnalysis.length >=  myRules.secondRule) {
-        if ( specialChartAnalysis.length >=  myRules.thirdRule ) {
-          return 6;
-        }
-      }
-    }else {
-      return  5;
+  }
+  
+  switch (nullResultSearch.length) {
+    case 0: {
+      let { firstRule, secondRule, thirdRule } = getRules(TailleAnalysis);
+      // Fort mais Trés fort ou non ! 
+      return (
+        lowerCaseAnalysis.length >= firstRule
+        ?
+        (
+          upperCaseAnalysis.length >=  secondRule 
+          ?
+          (specialChartAnalysis.length >=  thirdRule ? 6 : null) 
+          : 
+          null 
+        )
+        :
+        5
+      );
     }
-  }else if (nullResultSearch.length === 1) {
-    if (specialChartAnalysis === null) {
-      return 3;
-    }else {
-      return 4;
+    case 1: {
+      return specialChartAnalysis === null ? 3 : 4;
     }
-  }else if (nullResultSearch.length === 2){
-    if (specialChartAnalysis === null) {
-      return 1;
-    }else {            
-      return 2;
+    case 2: {
+      return specialChartAnalysis === null ? 1 : 2;
     }
-  }else{
-    return 0;
-  };
+    case 4: {
+      return -1;
+    }
+    default: {
+      return 0;
+    }
+  }
 };
 
 
+// ___ Public Funcs ___ //
+const display = (displayOpts) => {
+  let intResult = checkRules(displayOpts);
+  let stringResult = StringOpt[IntOpt.findIndex(value => value === intResult)];
+  return displayOpts.displayString ? `${stringResult}${errorType(displayOpts)}` : intResult;
+}
 
-module.exports = { errorType, display, searchResult, espaceChart, getRules, validationRules }
+module.exports = { errorType, display, searchResult, espaceChart, getRules, checkRules }

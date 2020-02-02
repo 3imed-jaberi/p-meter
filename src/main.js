@@ -1,9 +1,7 @@
 const { 
-  errorType, 
   display, 
   searchResult, 
-  espaceChart, 
-  validationRules 
+  espaceChart
 } = require('./utils');
 
 
