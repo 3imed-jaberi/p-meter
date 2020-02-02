@@ -19,13 +19,15 @@ const display = (result) => (StringOpt [IntOpt.findIndex(value => { return value
 
 
 // analyse-password.js 
-const lowerCaseLetters = /[a-z]/g;
-const upperCaseLetters = /[A-Z]/g;
-const number = /[0-9]/g ;
-const specialChart = /\W/g;
-const espaceChart =  /\s/g;
+const {
+  lowerCaseLetters,
+  upperCaseLetters,
+  number,
+  specialChart,
+  espaceChart
+} = require('./constant');
 
-
+// __ Private Use __ //
 const searchResult = (password) => ([
   lowerCaseAnalysis = password.match(lowerCaseLetters),
   upperCaseAnalysis = password.match(upperCaseLetters),
@@ -35,24 +37,23 @@ const searchResult = (password) => ([
 
 
 // rules-of-analyse.js
-const rules = (TailleAnalysis ) => {
-  let rules = {};
-
-  if (TailleAnalysis > 9) {
-    rules = { 
-      firstRule : parseInt( TailleAnalysis * 0.3 ), 
-      secondRule : parseInt( TailleAnalysis * 0.1 ),
-      thirdRule : parseInt( TailleAnalysis * 0.1) 
-    };
-  }else{
-    rules = { 
-      firstRule : parseInt( TailleAnalysis * 0.3 ), 
-      secondRule : parseInt( TailleAnalysis * 0.2 ),
-      thirdRule : parseInt( TailleAnalysis * 0.2)
-    };
-  };
-
-  return rules ;
+const rules = (TailleAnalysis ) => { 
+  
+  return (
+    (TailleAnalysis > 9) 
+      ? 
+    { 
+      firstRule : parseInt(TailleAnalysis * 0.3), 
+      secondRule : parseInt(TailleAnalysis * 0.1),
+      thirdRule : parseInt(TailleAnalysis * 0.1) 
+    }
+    :
+    { 
+      firstRule : parseInt(TailleAnalysis * 0.3), 
+      secondRule : parseInt(TailleAnalysis * 0.2),
+      thirdRule : parseInt(TailleAnalysis * 0.2)
+    }
+  );
 };
 
 
