@@ -1,6 +1,5 @@
-const { searchResult , espaceChart } = require('./analyse-password');
 const validationRules = require('./validation-rules');
-const { errorType, display } = require('./utils');
+const { errorType, display, searchResult, espaceChart } = require('./utils');
 
 
 

@@ -18,5 +18,20 @@ const resultIntgerValue = [-1, 0, 1, 2, 3, 4, 5, 6];
 
 const display = (result) => (resultStringValue [resultIntgerValue.findIndex(value => { return value == result })]);
 
+// analyse-password.js 
+const lowerCaseLetters = /[a-z]/g;
+const upperCaseLetters = /[A-Z]/g;
+const number = /[0-9]/g ;
+const specialChart = /\W/g;
+const espaceChart =  /\s/g;
 
-module.exports = { errorType, display }
+
+const searchResult = (password) => ([
+  lowerCaseAnalysis = password.match(lowerCaseLetters),
+  upperCaseAnalysis = password.match(upperCaseLetters),
+  numberAnalysis = password.match(number),
+  specialChartAnalysis = password.match(specialChart)
+]);
+
+
+module.exports = { errorType, display, searchResult, espaceChart }
