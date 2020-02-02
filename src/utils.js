@@ -13,11 +13,9 @@ const errorType = (nullResultSearch , espaceChartAnalysis , TailleAnalysis ) => 
 
 
 // show result ..
-const resultStringValue = ['ERROR', 'FAIBLE', 'AVG', 'ABOVE AVG', 'STRONG AVG', 'FORT', 'ABOVE FORT','STRONG FORT'];
-const resultIntgerValue = [-1, 0, 1, 2, 3, 4, 5, 6]; 
+const { StringOpt, IntOpt } = require('./outputOpts.json');
 
-
-const display = (result) => (resultStringValue [resultIntgerValue.findIndex(value => { return value == result })]);
+const display = (result) => (StringOpt [IntOpt.findIndex(value => { return value == result })]);
 
 
 // analyse-password.js 
