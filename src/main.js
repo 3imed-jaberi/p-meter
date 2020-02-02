@@ -1,7 +1,7 @@
 const { searchResult , espaceChart } = require('./analyse-password');
 const validationRules = require('./validation-rules');
 const display = require ('./show-result');
-const errorType = require('./type-of-error');
+const { errorType } = require('./utils');
 
 
 

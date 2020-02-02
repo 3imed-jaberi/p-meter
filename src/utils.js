@@ -1,4 +1,4 @@
-
+// type of error file ..  
 const errorType = (nullResultSearch , espaceChartAnalysis , TailleAnalysis ) => {
   if (nullResultSearch.length === 4) {
     return ' : empty password';
@@ -12,4 +12,4 @@ const errorType = (nullResultSearch , espaceChartAnalysis , TailleAnalysis ) => 
 }
 
 
-module.exports= errorType;
+module.exports = { errorType }
