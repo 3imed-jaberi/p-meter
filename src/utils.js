@@ -11,12 +11,14 @@ const errorType = (nullResultSearch , espaceChartAnalysis , TailleAnalysis ) => 
   };
 }
 
+
 // show result ..
 const resultStringValue = ['ERROR', 'FAIBLE', 'AVG', 'ABOVE AVG', 'STRONG AVG', 'FORT', 'ABOVE FORT','STRONG FORT'];
 const resultIntgerValue = [-1, 0, 1, 2, 3, 4, 5, 6]; 
 
 
 const display = (result) => (resultStringValue [resultIntgerValue.findIndex(value => { return value == result })]);
+
 
 // analyse-password.js 
 const lowerCaseLetters = /[a-z]/g;
@@ -55,6 +57,7 @@ const rules = (TailleAnalysis ) => {
   return rules ;
 };
 
+
 // validation-rules.js
 const validationRules = (nullResultSearch, espaceChartAnalysis, TailleAnalysis) => {
   if ((nullResultSearch.length === 4) || (espaceChartAnalysis !== null) || (TailleAnalysis > 24) || (TailleAnalysis < 8)){
@@ -87,6 +90,7 @@ const validationRules = (nullResultSearch, espaceChartAnalysis, TailleAnalysis) 
     return 0;
   };
 };
+
 
 
 module.exports = { errorType, display, searchResult, espaceChart, rules, validationRules }
