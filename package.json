@@ -3,13 +3,14 @@
   "version": "2.0.0",
   "description": "A measure of the strength of the password for node js developer 📏 ..",
   "main": "index.js",
+  "files": [
+    "index.js"
+  ],
   "scripts": {
-    "test": "mocha",
-    "cover": "istanbul cover node_modules/mocha/bin/_mocha test/*.js",
-    "ci": "npm run cover",
-    "postversion": "git push && git push --tags",
-    "prepublishOnly": "npm run ci",
-    "preversion": "npm run ci"
+    "lint": "eslint index.js",
+    "test": "mocha index.test.js --exit",
+    "test-cov": "nyc npm run test",
+    "ci": "rimraf .nyc_output coverage && npm run lint && npm run test-cov"
   },
   "repository": {
     "type": "git",
@@ -31,11 +32,18 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "istanbul": "^0.4.5",
-    "mocha": "^7.0.1"
+    "eslint": "^7.12.1",
+    "eslint-config-standard": "^16.0.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.2",
+    "mocha": "^8.2.1",
+    "nyc": "^15.1.0",
+    "rimraf": "^3.0.2"
   },
   "engines": {
-    "node": ">= 8"
+    "node": ">= 12"
   },
   "bugs": {
     "url": "https://github.com/3imed-jaberi/p-meter/issues"
