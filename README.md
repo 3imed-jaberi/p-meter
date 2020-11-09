@@ -1,11 +1,10 @@
 # P-METER 📏
 
-> quick way to measure the strength of the password.
-
 ![pMeter](https://raw.githubusercontent.com/3imed-jaberi/p-meter/master/archive/logo.png)
 
 [![Build Status](https://travis-ci.org/3imed-jaberi/p-meter.svg?branch=master)](https://travis-ci.org/3imed-jaberi/p-meter) &nbsp; [![Coverage Status](https://coveralls.io/repos/github/3imed-jaberi/p-meter/badge.svg?branch=master)](https://coveralls.io/github/3imed-jaberi/p-meter?branch=master)
 
+> quick way to measure the strength of the password.
 
 The purpose of this module is to analyze the password
 and then categorize it according to our rules mentioned
