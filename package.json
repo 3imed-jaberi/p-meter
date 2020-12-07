@@ -1,6 +1,6 @@
 {
   "name": "p-meter",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "A measure of the strength of the password for node js developer 📏 ..",
   "main": "index.js",
   "files": [
