@@ -64,10 +64,10 @@ const result = passwordMeter(password)
 
 ```javascript
 // 1.x.x
-let result = passwordMeter(password, { displayString: true, useSpace: false })
+const result = passwordMeter(password, { displayString: true, useSpace: false })
 // 2.x.x
 // the default value of displayString and useSpace is false
-let result = passwordMeter(password, { displayString: true })
+const result = passwordMeter(password, { displayString: true })
 ```
 
 ## Rules 
